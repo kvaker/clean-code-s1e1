@@ -1,6 +1,7 @@
 // Document is the DOM can be accessed in the console with document.window.
 // Tree is from the top, html, body, p etc.
 <<<<<<< HEAD
+<<<<<<< HEAD
 // Problem: User interaction does not provide the correct results.
 // Solution: Add interactivity so the user can manage daily tasks.
 // Break things down into smaller steps and take each step at a time.
@@ -12,11 +13,11 @@ const incompleteTaskHolder = document.getElementById('incompleteTasks'); // ul o
 const completedTasksHolder = document.getElementById('completedTasks'); // completed-tasks
 =======
 
+=======
+>>>>>>> eebaf0b (fix: delete paragraph mark, add semicolon)
 // Problem: User interaction does not provide the correct results.
 // Solution: Add interactivity so the user can manage daily tasks.
 // Break things down into smaller steps and take each step at a time.
-
-
 // Event handling, user interaction is what starts the code execution.
 
 const taskInput = document.getElementById("new-task");// Add a new task.
@@ -28,6 +29,7 @@ const completedTasksHolder = document.getElementById("completedTasks");// comple
 
 // New task list item
 const createNewTaskElement = function (taskString) {
+<<<<<<< HEAD
     const listItem = document.createElement('li');
 
     // input (checkbox)
@@ -38,6 +40,9 @@ const createNewTaskElement = function (taskString) {
     const editInput = document.createElement('input'); // text
     // button.edit
     const editButton = document.createElement('button'); // edit button
+=======
+    const listItem = document.createElement("li");
+>>>>>>> eebaf0b (fix: delete paragraph mark, add semicolon)
 
 <<<<<<< HEAD
     // button.delete
@@ -45,18 +50,23 @@ const createNewTaskElement = function (taskString) {
     const deleteButtonImg = document.createElement('img'); // delete button image
 =======
     // input (checkbox)
-    let checkBox = document.createElement("input");// checkbx
+    const checkBox = document.createElement("input");// checkbx
     // label
-    let label = document.createElement("label");// label
+    const label = document.createElement("label");// label
     // input (text)
-    let editInput = document.createElement("input");// text
+    const editInput = document.createElement("input");// text
     // button.edit
-    let editButton = document.createElement("button");// edit button
+    const editButton = document.createElement("button");// edit button
 
     // button.delete
+<<<<<<< HEAD
     let deleteButton = document.createElement("button");// delete button
     let deleteButtonImg = document.createElement("img");// delete button image
 >>>>>>> 51dc3e4 (fix: add space after '//' in comment)
+=======
+    const deleteButton = document.createElement("button");// delete button
+    const deleteButtonImg = document.createElement("img");// delete button image
+>>>>>>> eebaf0b (fix: delete paragraph mark, add semicolon)
 
     label.innerText = taskString;
     label.className = 'task';
@@ -83,9 +93,12 @@ const createNewTaskElement = function (taskString) {
     deleteButton.appendChild(deleteButtonImg);
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 >>>>>>> 51dc3e4 (fix: add space after '//' in comment)
+=======
+>>>>>>> eebaf0b (fix: delete paragraph mark, add semicolon)
     // and appending.
     listItem.appendChild(checkBox);
     listItem.appendChild(label);
@@ -114,14 +127,14 @@ const addTask = function () {
 };
 =======
     taskInput.value = "";
-
-}
+};
 
 // Edit an existing task.
 >>>>>>> 51dc3e4 (fix: add space after '//' in comment)
 
 // Edit an existing task.
 const editTask = function () {
+<<<<<<< HEAD
     console.log('Edit Task...');
     console.log(`Change 'edit' to 'save'`);
     const listItem = this.parentNode;
@@ -140,6 +153,17 @@ const editTask = function () {
     let label = listItem.querySelector("label");
     let editBtn = listItem.querySelector(".edit");
     let containsClass = listItem.classList.contains("editMode");
+=======
+    console.log("Edit Task...");
+    console.log("Change 'edit' to 'save'");
+
+    const listItem = this.parentNode;
+
+    const editInput = listItem.querySelector('input[type=text]');
+    const label = listItem.querySelector("label");
+    const editBtn = listItem.querySelector(".edit");
+    const containsClass = listItem.classList.contains("editMode");
+>>>>>>> eebaf0b (fix: delete paragraph mark, add semicolon)
     // If class of the parent is .editmode
     if (containsClass) {
 
@@ -168,11 +192,11 @@ const deleteTask = function () {
     listItem.classList.toggle("editMode");
 };
 
-
 // Delete task.
 const deleteTask = function () {
     console.log("Delete Task...");
 
+<<<<<<< HEAD
     let listItem = this.parentNode;
     let ul = listItem.parentNode;
 >>>>>>> 51dc3e4 (fix: add space after '//' in comment)
@@ -188,6 +212,12 @@ const taskCompleted = function () {
     const listItem = this.parentNode;
 }
 =======
+=======
+    const listItem = this.parentNode;
+    const ul = listItem.parentNode;
+    // Remove the parent list item from the ul.
+    ul.removeChild(listItem);
+>>>>>>> eebaf0b (fix: delete paragraph mark, add semicolon)
 }
 
 
@@ -196,8 +226,12 @@ const taskCompleted = function () {
     console.log("Complete Task...");
 
     // Append the task list item to the #completed-tasks
+<<<<<<< HEAD
     let listItem = this.parentNode;
 >>>>>>> 51dc3e4 (fix: add space after '//' in comment)
+=======
+    const listItem = this.parentNode;
+>>>>>>> eebaf0b (fix: delete paragraph mark, add semicolon)
     completedTasksHolder.appendChild(listItem);
     bindTaskEvents(listItem, taskIncomplete);
 };
@@ -214,6 +248,7 @@ const taskIncomplete = function () {
     // Mark task as incomplete.
     // When the checkbox is unchecked
     // Append the task list item to the #incompleteTasks.
+<<<<<<< HEAD
     let listItem = this.parentNode;
 >>>>>>> 51dc3e4 (fix: add space after '//' in comment)
     incompleteTaskHolder.appendChild(listItem);
@@ -233,6 +268,18 @@ const ajaxRequest = function () {
 
 
 >>>>>>> 51dc3e4 (fix: add space after '//' in comment)
+=======
+    const listItem = this.parentNode;
+    incompleteTaskHolder.appendChild(listItem);
+    bindTaskEvents(listItem, taskCompleted);
+};
+
+const ajaxRequest = function () {
+    console.log("AJAX Request");
+};
+
+// The glue to hold it all together.
+>>>>>>> eebaf0b (fix: delete paragraph mark, add semicolon)
 // Set the click handler to the addTask function.
 addButton.onclick = addTask;
 addButton.addEventListener('click', addTask);
@@ -248,11 +295,17 @@ const bindTaskEvents = function (taskListItem, checkBoxEventHandler) {
 =======
     console.log("bind list item events");
     // select ListItems children
+<<<<<<< HEAD
     let checkBox = taskListItem.querySelector("input[type=checkbox]");
     let editButton = taskListItem.querySelector("button.edit");
     let deleteButton = taskListItem.querySelector("button.delete");
 
 >>>>>>> 51dc3e4 (fix: add space after '//' in comment)
+=======
+    const checkBox = taskListItem.querySelector("input[type=checkbox]");
+    const editButton = taskListItem.querySelector("button.edit");
+    const deleteButton = taskListItem.querySelector("button.delete");
+>>>>>>> eebaf0b (fix: delete paragraph mark, add semicolon)
 
     // Bind editTask to edit button.
     editButton.onclick = editTask;
@@ -261,11 +314,15 @@ const bindTaskEvents = function (taskListItem, checkBoxEventHandler) {
     // Bind taskCompleted to checkBoxEventHandler.
     checkBox.onchange = checkBoxEventHandler;
 };
+<<<<<<< HEAD
 }
+=======
+>>>>>>> eebaf0b (fix: delete paragraph mark, add semicolon)
 
 // cycle over incompleteTaskHolder ul list items
 // for each list item
 for (let i = 0; i < incompleteTaskHolder.children.length; i++) {
+<<<<<<< HEAD
 <<<<<<< HEAD
     // bind events to list items children (tasksCompleted)
     bindTaskEvents(incompleteTaskHolder.children[i], taskCompleted);
@@ -277,12 +334,11 @@ for (let i = 0; i < completedTasksHolder.children.length; i++) {
     // bind events to list items children (tasksInCompleted)
 =======
 
+=======
+>>>>>>> eebaf0b (fix: delete paragraph mark, add semicolon)
     // bind events to list items chldren(tasksCompleted)
     bindTaskEvents(incompleteTaskHolder.children[i], taskCompleted);
 }
-
-
-
 
 // cycle over completedTasksHolder ul list items
 for (let i = 0; i < completedTasksHolder.children.length; i++) {
@@ -293,6 +349,7 @@ for (let i = 0; i < completedTasksHolder.children.length; i++) {
 
 // Issues with usability don't get seen until they are in front of a human tester.
 <<<<<<< HEAD
+<<<<<<< HEAD
 // prevent creation of empty tasks.
 // Change edit to save when you are in edit mode.
 =======
@@ -301,3 +358,7 @@ for (let i = 0; i < completedTasksHolder.children.length; i++) {
 
 // Change edit to save when you are in edit mode.
 >>>>>>> 51dc3e4 (fix: add space after '//' in comment)
+=======
+// prevent creation of empty tasks.
+// Change edit to save when you are in edit mode.
+>>>>>>> eebaf0b (fix: delete paragraph mark, add semicolon)
