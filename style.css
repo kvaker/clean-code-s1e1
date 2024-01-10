@@ -73,7 +73,11 @@ button:hover {
 
 /* Heading */
 h3,
+<<<<<<< HEAD
 label[for="new-task"] {
+=======
+label[for='new-task'] {
+>>>>>>> c261984 (fix: replace 4 backspace to 2 backspace)
   color: #333;
   font-weight: 700;
   font-size: 15px;
@@ -101,7 +105,11 @@ input[type="text"]:focus {
 }
 
 /* New Task */
+<<<<<<< HEAD
 label[for="new-task"] {
+=======
+label[for='new-task'] {
+>>>>>>> c261984 (fix: replace 4 backspace to 2 backspace)
   display: block;
   margin: 0 0 20px;
 }
